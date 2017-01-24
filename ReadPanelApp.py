@@ -114,7 +114,7 @@ class PanelAPP_API():
             for j in self.dict_of_panels[i]:
                 # if it's a gene symbol panel  
                 if "symbols" in j:
-                    " if no symbols for this panel"
+                    #if no symbols for this panel
                     if len(self.dict_of_panels[i][j])==0:
                         pass
                     else:
