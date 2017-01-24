@@ -23,7 +23,7 @@ class PanelAPP_API():
         self.dict_of_panels = {}
         
         # output_file
-        self.outputfilepath="/home/aled/Documents/PanelApp/"
+        self.outputfilepath="/home/$USER/Documents/PanelApp/"
 
     def get_list_of_panels(self):
         ''' Retrieve all the gene panels from the PanelAPP url. Create an dictionary key for each one made up of a tuple of the panel name and version number'''
