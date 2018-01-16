@@ -15,15 +15,15 @@ class PanelAPP_API():
 
     def __init__(self):
         # define the apis urls. both set to return json.
-        self.list_of_panels = "https://bioinfo.extge.co.uk/crowdsourcing/WebServices/list_panels?format=json"
+        self.list_of_panels = "https://panelapp.genomicsengland.co.uk/WebServices/list_panels/?format=json"
         # need to append the panel name on end
-        self.list_of_genes = "https://bioinfo.extge.co.uk/crowdsourcing/WebServices/get_panel/"
+        self.list_of_genes = "https://panelapp.genomicsengland.co.uk/WebServices/get_panel/%s/?format=json"
 
         # set up the dictionary to collate all the panels
         self.dict_of_panels = {}
         
         # output_file
-        self.outputfilepath="/home/$USER/Documents/PanelApp/"
+        self.outputfilepath="/home/mokaguys/Documents/PanelApp/"
 
     def get_list_of_panels(self):
         ''' Retrieve all the gene panels from the PanelAPP url. Create an dictionary key for each one made up of a tuple of the panel name and version number'''
@@ -54,7 +54,7 @@ class PanelAPP_API():
             panelID = i[0]
 
             # the response package retrieves the results of the url search
-            response = requests.get(self.list_of_genes + panelID+"/?format=json")
+            response = requests.get(self.list_of_genes % (panelID))
             
             # this is captured as a json object
             json_results = response.json()
